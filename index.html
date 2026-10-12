@@ -1,122 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Semana de Ingeniería</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel= "stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Conferencias</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  
 </head>
-
 <body>
-    <header id="bg-dark text-white py-3" class="header">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>Semana de Ingeniería</h1>
 
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" tupe="button" id="cartDropdown" data-bs-toggle="dropdown"
-                    aria-expanded="false">Carrito (<span id="Carrito-cantidad"></span>)
-                </button>
+  <!-- BANNER PUBLICITARIO -->
+  <div class="bg-warning text-dark text-center py-2 fw-bold">
+    ¡Publicidad! Aprovecha un 20% de descuento reservando 2 o más conferencias esta semana.
+  </div>
 
-            </div>
-            </div>
-        <div class="container">
-            <div class="row">
-                <div class="two columns u-pull-right">
-                    <ul>
-                        <li class="submenu">
-                            <img src="img/cart.png" id="img-carrito">
-                            <div id="carrito">
-                                <table id="lista-carrito" class="u-full-width">
-                                    <thead>
-                                        <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <header class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1>Conferencias Web</h1>
+      
+      <!-- DROPDOWN CARRITO -->
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          🛒 Carrito (<span id="cart-count">0</span>)
+        </button>
+        <div class="dropdown-menu dropdown-menu-end p-3" style="width: 320px;" aria-labelledby="cartDropdown">
+          <h5>Carrito de Compras</h5>
+          <ul id="lista-carrito" class="list-group mb-2">
+            <!-- Ítems agregados dinámicamente -->
+          </ul>
+          <div class="d-flex justify-content-between font-weight-bold my-2">
+            <strong>Total:</strong>
+            <span id="total-precio">$0.00</span>
+          </div>
+          <div class="d-grid gap-2">
+            <button id="vaciar-carrito" class="btn btn-outline-danger btn-sm">Vaciar Carrito</button>
+            <button id="btn-pagar" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalPago">Pagar</button>
+          </div>
         </div>
-    </header>
-
-    <div id="hero">
-        <div class="container">
-            <div class="row">
-                <div class="six columns">
-
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </header>
 
-    <div id="lista-libros" class="container">
-        <h1 id="encabezado" class="encabezado">Venta de Libros</h1>
-        <div class="row">
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/libro_1.jpg" width="50%" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Java 1</h4>
-                        <p>Predro Torres</p>
-                        <img src="img/estrellas.png">
-                        <p class="precio">$100 <span class="u-pull-right ">$75</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar
-                            Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/libro_2.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Java 2</h4>
-                        <p>Pedro Torres</p>
-                        <img src="img/estrellas.png">
-                        <p class="precio">$300 <span class="u-pull-right ">$215</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar
-                            Al Carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/libro_3.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Java 3</h4>
-                        <p>Pedro Torres</p>
-                        <img src="img/estrellas.png">
-                        <p class="precio">$300 <span class="u-pull-right ">$215</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar
-                            Al Carrito</a>
-                    </div>
-                </div>
-            </div>
+  <!-- CATÁLOGO DE CONFERENCIAS -->
+  <main class="container my-5">
+    <h2 class="mb-4 text-center">Próximas Conferencias</h2>
+    <div class="row" id="lista-conferencias">
+      
+      <!-- Conferencia 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="img/curso1.jpg" class="card-img-top" alt="Conferencia 1">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title conferencia-titulo">Conferencia: Desarrollo Web Frontend</h5>
+            <p class="text-muted mb-1">📍 <strong>Lugar:</strong> Auditorio A - Ciudad de México</p>
+            <p class="card-text">Aprende sobre las mejores prácticas en desarrollo frontend moderno con frameworks actuales.</p>
+            <p class="fs-5 fw-bold text-primary mt-auto">$<span class="conferencia-precio">50.00</span></p>
+            <button class="btn btn-primary agregar-carrito" data-id="1">Añadir al Carrito</button>
+          </div>
         </div>
+      </div>
+
+      <!-- Conferencia 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="img/curso2.jpg" class="card-img-top" alt="Conferencia 2">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title conferencia-titulo">Conferencia: Inteligencia Artificial</h5>
+            <p class="text-muted mb-1">📍 <strong>Lugar:</strong> Centro de Convenciones - Monterrey</p>
+            <p class="card-text">Descubre las nuevas tendencias sobre aprendizaje automático y modelos del lenguaje.</p>
+            <p class="fs-5 fw-bold text-primary mt-auto">$<span class="conferencia-precio">75.00</span></p>
+            <button class="btn btn-primary agregar-carrito" data-id="2">Añadir al Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conferencia 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="img/curso3.jpg" class="card-img-top" alt="Conferencia 3">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title conferencia-titulo">Conferencia: Ciberseguridad Avanzada</h5>
+            <p class="text-muted mb-1">📍 <strong>Lugar:</strong> Salón Magno - Guadalajara</p>
+            <p class="card-text">Aprende a proteger infraestructuras críticas contra ciberataques modernos.</p>
+            <p class="fs-5 fw-bold text-primary mt-auto">$<span class="conferencia-precio">60.00</span></p>
+            <button class="btn btn-primary agregar-carrito" data-id="3">Añadir al Carrito</button>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </main>
 
-    <footer id="footer" class="footer">
-        <div class="container">
-            <div class="row">
-                <p>Marca Registrada</p>
-            </div>
+  <!-- MODAL DE PAGO -->
+  <div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="modalPagoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPagoLabel">Finalizar Compra</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </footer>
+        <div class="modal-body">
+          <p class="fs-5"><strong>Total de compra:</strong> $<span id="modal-total">0.00</span></p>
+          <form id="form-pago">
+            <label class="form-label font-weight-bold">Elige tarjeta de pago:</label>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta1" value="Visa **** 1234" checked>
+              <label class="form-check-label" for="tarjeta1">💳 Visa (terminada en 1234)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta2" value="Mastercard **** 5678">
+              <label class="form-check-label" for="tarjeta2">💳 Mastercard (terminada en 5678)</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="American Express **** 9012">
+              <label class="form-check-label" for="tarjeta3">💳 American Express (terminada en 9012)</label>
+            </div>
+            <button type="button" id="btn-aceptar-pago" class="btn btn-success w-100">Aceptar y Pagar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="js/codigo.js"></script>
-    <script src="https://code.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0"><strong>Equipo:</strong> Número de Equipo [Ej. Equipo 1]</p>
+      <p class="mb-0"><strong>Integrantes:</strong> Integrante 1, Integrante 2, Integrante 3</p>
+    </div>
+  </footer>
+
+  <script src="js/codigo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
