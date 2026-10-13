@@ -41,34 +41,48 @@
   </header>
 
   <main class="container my-4">
-    <!-- CARRUSEL DE PUBLICIDAD -->
-    <div id="carruselPublicidad" class="carousel slide border mb-5" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="bg-light text-center p-5 d-flex align-items-center justify-content-center" style="height: 200px;">
-            <h2 class="text-primary fw-bold">¡Publicidad! Carrusel de Conferencias</h2>
-          </div>
+  <!-- Inicio: Presentación - Semana de las Ingenierías -->
+<section class="presentacion-principal container">
+    <div class="row align-items-center">
+        <!-- Columna Izquierda: Texto y Botones -->
+        <div class="col-md-6 columna-texto">
+            <div class="alerta-novedad">
+                <span>¡El evento más esperado del semestre!</span>
+            </div>
+            <h1 class="titulo-presentacion">Semana de las <br><strong>Ingenierías.</strong></h1>
+            <p class="descripcion-presentacion">
+                Desarrolla tus habilidades. Desarrolla tu futuro. Asiste a conferencias magistrales, talleres interactivos y descubre las últimas tendencias en tecnología dentro de la Facultad.
+            </p>
+            <div class="botones-presentacion">
+                <a href="#conferencias" class="btn-principal">Ver Conferencias</a>
+                <a href="#ingenierias" class="btn-secundario">Explorar Ingenierías</a>
+            </div>
         </div>
-        <div class="carousel-item">
-          <div class="bg-warning text-center p-5 d-flex align-items-center justify-content-center" style="height: 200px;">
-            <h2 class="text-dark fw-bold">20% de Descuento al adquirir 2 o más conferencias</h2>
-          </div>
+        
+        <!-- Columna Derecha: Mosaico de Imágenes -->
+        <div class="col-md-6 columna-imagenes">
+            <div class="mosaico-grid">
+                <!-- Imagen Alta (Izquierda del mosaico) -->
+                <img src="img/foto3.jpeg" alt="Ingeniería" class="img-mosaico img-grande">
+                
+                <!-- Columna de dos imágenes apiladas (Derecha del mosaico) -->
+                <div class="mosaico-columna">
+                    <img src="img/foto1.jpeg" alt="Tecnología" class="img-mosaico img-pequena">
+                    <img src="img/foto2.jpeg" alt="Desarrollo" class="img-mosaico img-pequena">
+                </div>
+            </div>
         </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carruselPublicidad" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carruselPublicidad" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-      </button>
     </div>
+</section>
+<!-- Fin: Presentación -->
 
     <!-- TÍTULO CONFERENCIAS -->
-    <h2 class="text-center fw-bold mb-4" style="color: #000;">Conferencias</h2>
+    <h2 class="text-center fw-bold mb-4" style="color: #000;" id="conferencias">Conferencias</h2>
 
     <!-- CATÁLOGO DE CONFERENCIAS CON IDENTIDAD VISUAL -->
     <div class="row" id="lista-conferencias">
       
+    
       <!-- Conferencia 1 -->
       <div class="col-md-4 mb-4">
         <div class="card card-conferencia h-100 p-3">
@@ -76,9 +90,11 @@
             <img src="img/curso1.jpg" class="card-img-top img-fluid" alt="Foto Conferencia 1" style="height: 180px; object-fit: cover;">
           </div>
           <div class="card-body d-flex flex-column text-center p-0">
-            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Conferencia 1</h5>
-            <p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Auditorio A - FES Aragón</p>
-            <p class="card-text small mb-2">Descripción 1: Introducción a Tecnologías Web y Desarrollo Frontend.</p>
+            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Servidores y Base de Datos en la nube: AWS Cloud, Azure, GCP</h5>
+            <p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Auditorio A1 - FES Aragón</p>
+            <p class="card-text small mb-2">Ponente: Fernando Cisneros Reyes.</p>
+            <p class="card-text small mb-3">Fecha: 22 de septiembre de 2026.</p>
+            <p class="card-text small mb-4">Horario: 13:00 - 14:30</p>
             <p class="fs-5 fw-bold text-warning mt-auto mb-2">$<span class="conferencia-precio">150.00</span></p>
             <button class="btn btn-dorado w-100 agregar-carrito" data-id="1">Añadir al carrito</button>
           </div>
@@ -92,9 +108,11 @@
             <img src="img/curso2.jpg" class="card-img-top img-fluid" alt="Foto Conferencia 2" style="height: 180px; object-fit: cover;">
           </div>
           <div class="card-body d-flex flex-column text-center p-0">
-            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Conferencia 2</h5>
-            <p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Centro de Cómputo</p>
-            <p class="card-text small mb-2">Descripción 2: Inteligencia Artificial aplicada en la industria actual.</p>
+            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Ciberseguridad y prevención - BBVA</h5>
+            <p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Auditorio DUACyD - FES Aragón</p>
+            <p class="card-text small mb-2">Ponente: BBVA.</p>
+            <p class="card-text small mb-3">Fecha: 22 de septiembre de 2026.</p>
+            <p class="card-text small mb-4">Horario: 17:00 - 18:00</p>
             <p class="fs-5 fw-bold text-warning mt-auto mb-2">$<span class="conferencia-precio">200.00</span></p>
             <button class="btn btn-dorado w-100 agregar-carrito" data-id="2">Añadir al carrito</button>
           </div>
@@ -108,9 +126,11 @@
             <img src="img/curso3.jpg" class="card-img-top img-fluid" alt="Foto Conferencia 3" style="height: 180px; object-fit: cover;">
           </div>
           <div class="card-body d-flex flex-column text-center p-0">
-            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Conferencia 3</h5>
-            <p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Salón Multidisciplinario</p>
-            <p class="card-text small mb-2">Descripción 3: Ciberseguridad y protección de datos en entornos en la nube.</p>
+            <h5 class="card-title conferencia-titulo text-white fs-5 fw-bold">Sostenibilidad en los datos - Software libre y soberanía tecnológica</h5>
+<p class="small text-muted mb-1">📍 <strong>Lugar:</strong> Auditorio DUACyD - FES Aragón</p>
+            <p class="card-text small mb-2">Ponente: DR. Omar Mendoza Gonzales.</p>
+            <p class="card-text small mb-3">Fecha: 24 de septiembre de 2026.</p>
+            <p class="card-text small mb-4">Horario: 13:30 - 15:00</p>
             <p class="fs-5 fw-bold text-warning mt-auto mb-2">$<span class="conferencia-precio">180.00</span></p>
             <button class="btn btn-dorado w-100 agregar-carrito" data-id="3">Añadir al carrito</button>
           </div>
@@ -151,7 +171,40 @@
     </div>
   </div>
 
-  <!-- PIE DE PÁGINA REQUERIDO -->
+<!--Ingenierías Participantes -->
+<section class="seccion-ingenierias container" id="ingenierias">
+    <h2 class="encabezado-seccion text-center">Ingenierías Participantes</h2>
+    <div class="grid-ingenierias">
+        
+        <div class="card-ingenieria">
+            <h3>IEE</h3>
+            <p>Eléctrica Electrónica</p>
+        </div>
+        
+        <div class="card-ingenieria">
+            <h3>IME</h3>
+            <p>Mecánica</p>
+        </div>
+        
+        <div class="card-ingenieria">
+            <h3>ICO</h3>
+            <p>Computación</p>
+        </div>
+        
+        <div class="card-ingenieria">
+            <h3>ICI</h3>
+            <p>Civil</p>
+        </div>
+        
+        <div class="card-ingenieria">
+            <h3>IID</h3>
+            <p>Industrial</p>
+        </div>
+
+    </div>
+</section>
+
+  <!-- PIE DE PÁGINA -->
   <footer class="bg-dark text-white text-center py-3 mt-5">
     <div class="container">
       <p class="mb-0"><strong>Equipo:</strong> 10</p>

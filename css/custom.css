@@ -43,6 +43,133 @@ header {
   color: #000;
   font-weight: bold;
 }
+/* Presentación Principal*/
+.presentacion-principal {
+    padding: 60px 15px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Etiqueta superior estilo "píldora" */
+.alerta-novedad {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Tipografía del Título */
+.titulo-presentacion {
+    font-size: 3.5rem;
+    font-weight: 300; /* Letra delgada y elegante */
+    color: #333;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.titulo-presentacion strong {
+    font-weight: 700;
+    color: #002B5C; /* Azul institucional */
+}
+
+/* Texto de descripción */
+.descripcion-presentacion {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Botones redondeados */
+.botones-presentacion {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 12px 30px;
+    border-radius: 50px; 
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-principal {
+    background-color: #002B5C; /* Azul */
+    color: #ffffff;
+    border: 2px solid #002B5C;
+}
+
+.btn-principal:hover {
+    background-color: #D59F0F; /* Al pasar el mouse cambia a Dorado */
+    border-color: #D59F0F;
+    color: #ffffff;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #002B5C;
+    border: 2px solid #002B5C;
+}
+
+.btn-secundario:hover {
+    background-color: #002B5C;
+    color: #ffffff;
+}
+
+/* Mosaico de Imágenes*/
+.columna-imagenes {
+    position: relative;
+}
+
+.mosaico-grid {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.img-mosaico {
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.489); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-mosaico:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen izquierda: grande con un borde asimétrico */
+.img-grande {
+    width: 50%;
+    height: 450px;
+    border-radius: 20px;
+    border-top-right-radius: 80px; 
+}
+
+/* Columna derecha: dos imágenes apiladas */
+.mosaico-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+}
+
+.img-pequena {
+    width: 100%;
+    height: 217px; /* Mitad de la grande menos el espacio */
+    border-radius: 20px;
+}
+.img-pequena:last-child {
+    border-bottom-left-radius: 80px; /* Toque asimétrico abajo */
+}
 
 /* Tarjetas de conferencias */
 .card-conferencia {
@@ -59,6 +186,44 @@ header {
 .card-conferencia .text-muted {
   color: #d1d5db !important;
 }
+/* Diseño de cada Ingeniería */
+.card-ingenieria {
+    background-color: #ffffff;
+    border-top: 4px solid #002B5C;
+    border-radius: 8px;
+    padding: 30px 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-ingenieria:hover {
+    transform: translateY(-8px);
+    border-top-color: #D59F0F;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-ingenieria h3 {
+    color: #002B5C;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.card-ingenieria p {
+    color: #666666;
+    font-size: 1.1rem;
+    margin: 0;
+}
+.grid-ingenierias {
+    display: flex;         /* Activa el diseño flexible (horizontal por defecto) */
+    flex-wrap: wrap;       /* Permite que bajen a la siguiente línea si no caben (en móviles) */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 25px;             /* Espacio entre cada tarjeta */
+    width: 100%;           /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
 
 /* Botón Añadir al Carrito (Dorado) */
 .btn-dorado {
@@ -74,8 +239,33 @@ header {
   color: #000 !important;
 }
 
-/* Carrusel de Publicidad */
-.carousel-item img {
-  height: 250px;
-  object-fit: cover;
+/*Responsividad para Celulares*/
+@media (max-width: 768px) {
+    .titulo-presentacion {
+        font-size: 2.5rem;
+    }
+    .mosaico-grid {
+        margin-top: 40px;
+        flex-direction: column;
+    }
+    .img-grande, .mosaico-columna {
+        width: 100%;
+    }
+    .img-grande {
+        height: 300px;
+        border-top-right-radius: 20px;
+    }
+    .img-pequena {
+        height: 200px;
+        border-bottom-left-radius: 20px;
+    }
+    @media (max-width: 768px) {
+    .titulo-hero {
+        font-size: 2.5rem;
+    }
+    .card-ingenieria {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 }
