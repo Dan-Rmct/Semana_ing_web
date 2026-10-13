@@ -11,12 +11,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aleluflo06/SemanaIngenieriaWeb.git"
+    "url": "git+https://github.com/aleluflo06/semana-ingenieria-web"
   },
   "bugs": {
-    "url": "https://github.com/aleluflo06/SemanaIngenieriaWeb/issues"
+    "url": "https://github.com/aleluflo06/semana-ingenieria-web/issues"
   },
-  "homepage": "https://github.com/aleluflo06/SemanaIngenieriaWeb#readme",
+  "homepage": "https://github.com/aleluflo06/semana-ingenieria-web#readme",
   "devDependencies": {
     "http-server": "^14.1.1"
   },

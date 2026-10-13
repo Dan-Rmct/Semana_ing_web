@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnPagar = document.getElementById('btn-pagar');
   const btnAceptarPago = document.getElementById('btn-aceptar-pago');
 
-  // Delegación de eventos para agregar conferencias
+  // Evento agregar al carrito
   document.getElementById('lista-conferencias').addEventListener('click', (e) => {
     if (e.target.classList.contains('agregar-carrito')) {
       const card = e.target.closest('.card');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Renderizar el carrito en la interfaz
+  // Renderizar contenido del carrito
   function actualizarCarrito() {
     listaCarrito.innerHTML = '';
     let total = 0;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <strong>${item.titulo}</strong><br>
             <small class="text-muted">${item.lugar}</small><br>
-            <span class="badge bg-primary text-wrap">$${item.precio.toFixed(2)}</span>
+            <span class="badge bg-primary">$${item.precio.toFixed(2)}</span>
           </div>
           <button class="btn btn-danger btn-sm" onclick="eliminarItem(${index})">&times;</button>
         `;
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartCount.textContent = carrito.length;
   }
 
-  // Eliminar elemento individual
+  // Eliminar producto individual
   window.eliminarItem = (index) => {
     carrito.splice(index, 1);
     actualizarCarrito();
@@ -68,18 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarCarrito();
   });
 
-  // Procesar pago
+  // Pagar y vaciar
   btnAceptarPago.addEventListener('click', () => {
     if (carrito.length === 0) return;
 
     // Ventana emergente requerida
-    alert("¡Gracias por tu compra!");
+    alert("gracias por tu compra");
 
     // Vaciar el carrito
     carrito = [];
     actualizarCarrito();
 
-    // Cerrar ventana emergente/modal de Bootstrap
+    // Cerrar el modal
     const modalElement = document.getElementById('modalPago');
     const modalInstance = bootstrap.Modal.getInstance(modalElement);
     if (modalInstance) {
@@ -87,6 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Inicializar estado del carrito
   actualizarCarrito();
 });
